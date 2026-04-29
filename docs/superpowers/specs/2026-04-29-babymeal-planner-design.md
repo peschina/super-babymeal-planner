@@ -28,20 +28,111 @@ Each meal is composed of: `cereal + protein + vegetables + olive oil + broth`. T
 
 ### 4.2 Ingredient Database
 
-Static JSON data baked into the app. Each ingredient is tagged with metadata for filtering.
+Static JSON data baked into the app. Each ingredient is tagged with metadata for filtering and scheduling.
 
-**Cereals:** rice cream, corn cream, oat cream, mixed grain cream, semolina  
-Fields: `id`, `name_it`, `name_en`, `age_min` (months)
+#### Cereals (all from 6mo)
 
-**Proteins:** chicken, turkey, fish (cod/sole), legumes (lentils, chickpeas), cheese (parmigiano, ricotta), egg yolk  
-Fields: `id`, `name_it`, `name_en`, `age_min`, `allergen_tags[]`, `weekly_target` (min/max frequency)
+| ID | Italian | English | age_min | allergen_tags |
+|----|---------|---------|---------|---------------|
+| `crema-riso` | Crema di riso | Rice cream | 6 | — |
+| `crema-mais` | Crema di mais | Corn cream | 6 | — |
+| `crema-avena` | Crema di avena | Oat cream | 6 | gluten |
+| `crema-multicereali` | Crema multicereali | Mixed grain cream | 6 | gluten |
+| `semolino` | Semolino | Semolina | 6 | gluten |
 
-**Vegetables:** zucchini, carrot, potato, pumpkin, spinach, peas, green beans, fennel, broccoli, cauliflower, beet, etc.  
-Fields: `id`, `name_it`, `name_en`, `age_min`, `seasons[]`
+#### Proteins
 
-**Constants:** olive oil (always included), vegetable broth (always included), portions scale by age bracket.
+Proteins are organized by **group** (for weekly frequency targets) and **variant** (for rotation within a group).
 
-> **Note:** The exact ingredient list and portion sizes will be finalized collaboratively before implementation. The values below are initial estimates and must be validated.
+**White Meat — 3x/week** (all from 6mo)
+
+| ID | Italian | English | allergen_tags |
+|----|---------|---------|---------------|
+| `pollo` | Pollo | Chicken | — |
+| `tacchino` | Tacchino | Turkey | — |
+| `coniglio` | Coniglio | Rabbit | — |
+
+**Red Meat — 1x/week** (all from 6mo)
+
+| ID | Italian | English | allergen_tags |
+|----|---------|---------|---------------|
+| `agnello` | Agnello | Lamb | — |
+| `manzo` | Manzo | Beef | — |
+| `vitello` | Vitello | Veal | — |
+
+**Fish — 4x/week** (all from 6mo)
+
+| ID | Italian | English | allergen_tags |
+|----|---------|---------|---------------|
+| `branzino` | Branzino | Sea bass | fish |
+| `orata` | Orata | Sea bream | fish |
+| `merluzzo` | Merluzzo | Cod | fish |
+| `nasello` | Nasello | Hake | fish |
+| `sogliola` | Sogliola | Sole | fish |
+| `cefalo` | Cefalo | Grey mullet | fish |
+| `coda-di-rospo` | Coda di rospo | Monkfish | fish |
+| `trota` | Trota | Trout | fish |
+| `pesce-persico` | Pesce persico | Perch | fish |
+
+**Legumes — 2-3x/week** (all from 7mo)
+
+| ID | Italian | English | allergen_tags |
+|----|---------|---------|---------------|
+| `lenticchie-rosse` | Lenticchie rosse | Red lentils | legumes |
+| `lenticchie-verdi` | Lenticchie verdi | Green lentils | legumes |
+| `ceci` | Ceci | Chickpeas | legumes |
+| `piselli` | Piselli | Peas | legumes |
+| `fagiolini` | Fagiolini | Green beans | legumes |
+| `fagioli-neri` | Fagioli neri | Black beans | legumes |
+| `fagioli-borlotti` | Fagioli borlotti | Borlotti beans | legumes |
+| `fagioli-cannellini` | Fagioli cannellini | Cannellini beans | legumes |
+
+**Cheese — 2-3x/week** (all from 6mo)
+
+| ID | Italian | English | allergen_tags |
+|----|---------|---------|---------------|
+| `parmigiano` | Parmigiano | Parmesan | dairy |
+| `mozzarella` | Mozzarella | Mozzarella | dairy |
+| `ricotta` | Ricotta | Ricotta | dairy |
+| `crescenza` | Crescenza | Crescenza | dairy |
+| `stracchino` | Stracchino | Stracchino | dairy |
+| `robiola` | Robiola | Robiola | dairy |
+| `groviera` | Groviera | Gruyère | dairy |
+| `casera` | Casera | Casera | dairy |
+| `provola` | Provola | Provola | dairy |
+| `primosale` | Primosale | Primosale | dairy |
+
+**Egg — 1x/week**
+
+| ID | Italian | English | age_min | allergen_tags |
+|----|---------|---------|---------|---------------|
+| `tuorlo` | Tuorlo d'uovo | Egg yolk | 6 | egg |
+| `uovo-intero` | Uovo intero | Whole egg | 7 | egg |
+
+#### Vegetables
+
+| ID | Italian | English | age_min | seasons |
+|----|---------|---------|---------|---------|
+| `carota` | Carota | Carrot | 6 | all |
+| `patata` | Patata | Potato | 6 | all |
+| `zucchina` | Zucchina | Zucchini | 6 | all |
+| `sedano` | Sedano | Celery | 6 | all |
+| `scalogno` | Scalogno | Shallot | 6 | all |
+| `porro` | Porro | Leek | 6 | all |
+| `cipolla` | Cipolla | Onion | 6 | all |
+| `pomodoro` | Pomodoro | Tomato | 8 | spring, summer |
+| `zucca` | Zucca | Pumpkin | 6 | fall, winter |
+| `broccolo` | Broccolo | Broccoli | 6 | fall, winter |
+| `cavolfiore` | Cavolfiore | Cauliflower | 6 | fall, winter |
+| `finocchio` | Finocchio | Fennel | 6 | fall, winter |
+| `verza` | Verza | Savoy cabbage | 6 | fall, winter |
+| `spinaci` | Spinaci | Spinach | 12 | fall, winter |
+| `barbabietola` | Barbabietola | Beetroot | 12 | all |
+
+#### Constants
+
+- **Extra virgin olive oil** — always included, portions scale by age bracket
+- **Vegetable broth** — always included, portions scale by age bracket
 
 ### 4.3 Age Brackets & Portions
 
@@ -53,7 +144,14 @@ Three static age brackets with different portion sizes:
 | 8-9 mo   | 25g    | 30g     | 50g        | 160ml | 5g  |
 | 10-12 mo | 30g    | 35-40g  | 60g        | 170ml | 7g  |
 
-> **Note:** Portions are preliminary and will be refined with the user before implementation.
+> **Note:** Portions are preliminary and will be refined before implementation.
+
+**Age-restricted ingredients:**
+- From 7mo: legumes, whole egg
+- From 8mo: tomato
+- From 12mo: spinach, beetroot
+
+All other ingredients are available from 6mo.
 
 ### 4.4 Texture Options
 
@@ -77,9 +175,16 @@ Season detection: auto-detect from device date, with manual override in settings
 2. **For each day**, generate lunch + dinner ensuring:
    - No same protein in lunch and dinner of the same day
    - No same cereal in lunch and dinner of the same day
-   - Respect weekly protein frequency targets (e.g., fish 1-2x/week, legumes 2-3x, cheese 2x, egg 1x max)
-3. **Select 1-2 vegetables per meal** (e.g., zucchini alone, or carrot + potato); maximize vegetable variety across the week
-4. **Cross-week variety**: check the previous week's meals to avoid repeating the same protein/cereal patterns at the boundary
+   - Respect weekly protein group frequency targets:
+     - White meat (pollo, tacchino, coniglio): 3x/week
+     - Red meat (agnello, manzo, vitello): 1x/week
+     - Fish: 4x/week
+     - Legumes: 2-3x/week
+     - Cheese: 2-3x/week
+     - Egg: 1x/week max
+   - Rotate variants within each group (e.g., alternate between lenticchie rosse, ceci, piselli, etc.)
+3. **Select 2-4 vegetables per meal**; maximize vegetable variety across the week
+4. **Cross-week variety**: check the previous week's meals to avoid repeating the same protein variants and cereal patterns at the week boundary (e.g., if last week ended with chicken on Sunday, don't start the new week with chicken on Monday)
 5. Use a seeded random approach for reproducibility
 
 ### 4.7 Single Meal Swap
@@ -173,9 +278,9 @@ Store at least the last 2 weeks to provide cross-week variety context. Older wee
 
 1. **First launch** → onboarding wizard → save profile → generate first week → show calendar
 2. **Open app** → load profile → check if current week exists → show it or generate
-3. **Navigate weeks** → generate on-demand, cache in LocalStorage
-4. **Swap meal** → regenerate one slot respecting constraints → save
-5. **Change settings** → update profile → regenerate affected meals in current week
+3. **Navigate to a new week** → load previous week from storage for variety context → generate new week → cache in LocalStorage
+4. **Swap meal** → regenerate one slot respecting same-day constraints, rest-of-week variety, and cross-week context → save
+5. **Change settings** → update profile → regenerate affected meals in current week (allergen changes filter out affected meals; age/texture changes update portions for remaining future meals)
 
 ## 7. PWA Configuration
 
