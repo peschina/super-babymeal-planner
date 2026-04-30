@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "BabyMeal Planner",
+    "tagline": "Pasti sani e vari per il tuo bambino"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "BabyMeal Planner",
+      "subtitle": "Pasti sani e vari per il tuo bambino, ogni giorno. Noi pianifichiamo, tu cucini!",
+      "start": "Iniziamo"
+    },
+    "profile": {
+      "title": "Parlaci del tuo bambino",
+      "subtitle": "Personalizzeremo i pasti per la sua età",
+      "age": "Età",
+      "texture": "Consistenza preferita",
+      "next": "Avanti"
+    },
+    "allergens": {
+      "title": "Allergie o intolleranze?",
+      "subtitle": "Escludi gli alimenti da evitare. Puoi cambiare dopo.",
+      "skip": "Nessuna allergia, salta",
+      "done": "Genera il mio piano!"
+    }
+  },
+  "calendar": {
+    "weekOf": "Settimana del",
+    "lunch": "Pranzo",
+    "dinner": "Cena",
+    "tapForDetails": "Tap per dettagli",
+    "days": {
+      "short": ["L", "M", "M", "G", "V", "S", "D"],
+      "long": ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"]
+    }
+  },
+  "meal": {
+    "swap": "Cambia questo pasto",
+    "ingredients": "Ingredienti",
+    "portions": "Porzioni",
+    "texture": "Consistenza"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "ageBracket": "Fascia d'età",
+    "texture": "Consistenza",
+    "allergens": "Allergie",
+    "language": "Lingua",
+    "season": "Stagione",
+    "seasonAuto": "Automatica",
+    "save": "Salva"
+  },
+  "allergens": {
+    "fish": "Pesce",
+    "dairy": "Latticini",
+    "egg": "Uova",
+    "legumes": "Legumi",
+    "gluten": "Glutine"
+  },
+  "textures": {
+    "smooth": "Liscia (crema/purè)",
+    "slightly-textured": "Leggermente granulosa",
+    "soft-pieces": "Pezzettini morbidi"
+  },
+  "seasons": {
+    "spring": "Primavera",
+    "summer": "Estate",
+    "fall": "Autunno",
+    "winter": "Inverno"
+  },
+  "ageBrackets": {
+    "6-7": "6-7 mesi",
+    "8-9": "8-9 mesi",
+    "10-12": "10-12 mesi"
+  }
+}

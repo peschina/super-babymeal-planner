@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "BabyMeal Planner",
+    "tagline": "Healthy and varied meals for your baby"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "BabyMeal Planner",
+      "subtitle": "Healthy and varied meals for your baby, every day. We plan, you cook!",
+      "start": "Let's start"
+    },
+    "profile": {
+      "title": "Tell us about your baby",
+      "subtitle": "We'll customize meals for their age",
+      "age": "Age",
+      "texture": "Preferred texture",
+      "next": "Next"
+    },
+    "allergens": {
+      "title": "Any allergies or intolerances?",
+      "subtitle": "Exclude foods to avoid. You can change this later.",
+      "skip": "No allergies, skip",
+      "done": "Generate my plan!"
+    }
+  },
+  "calendar": {
+    "weekOf": "Week of",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "tapForDetails": "Tap for details",
+    "days": {
+      "short": ["M", "T", "W", "T", "F", "S", "S"],
+      "long": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    }
+  },
+  "meal": {
+    "swap": "Swap this meal",
+    "ingredients": "Ingredients",
+    "portions": "Portions",
+    "texture": "Texture"
+  },
+  "settings": {
+    "title": "Settings",
+    "ageBracket": "Age bracket",
+    "texture": "Texture",
+    "allergens": "Allergies",
+    "language": "Language",
+    "season": "Season",
+    "seasonAuto": "Automatic",
+    "save": "Save"
+  },
+  "allergens": {
+    "fish": "Fish",
+    "dairy": "Dairy",
+    "egg": "Eggs",
+    "legumes": "Legumes",
+    "gluten": "Gluten"
+  },
+  "textures": {
+    "smooth": "Smooth (purée/cream)",
+    "slightly-textured": "Slightly textured (mashed)",
+    "soft-pieces": "Soft pieces (diced)"
+  },
+  "seasons": {
+    "spring": "Spring",
+    "summer": "Summer",
+    "fall": "Fall",
+    "winter": "Winter"
+  },
+  "ageBrackets": {
+    "6-7": "6-7 months",
+    "8-9": "8-9 months",
+    "10-12": "10-12 months"
+  }
+}
