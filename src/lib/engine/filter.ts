@@ -1,4 +1,12 @@
-import type { Cereal, Protein, Vegetable, AllergenTag, Season } from '$lib/types';
+import type { AgeBracket, Cereal, Protein, Vegetable, AllergenTag, Season } from '$lib/types';
+
+export function ageBracketToMinMonth(bracket: AgeBracket): number {
+  switch (bracket) {
+    case '6-7': return 6;
+    case '8-9': return 8;
+    case '10-12': return 10;
+  }
+}
 
 export function filterCereals(
   cereals: Cereal[],
