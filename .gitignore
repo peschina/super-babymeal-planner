@@ -1,2 +1,21 @@
 .superpowers/
 .worktrees/
+
+# Dependencies
+node_modules/
+
+# Build output
+build/
+.svelte-kit/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
