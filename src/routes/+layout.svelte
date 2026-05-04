@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { initI18n } from '$lib/i18n';
+  import '$lib/i18n';
+  import { setLocale } from '$lib/i18n';
   import { profileStore } from '$lib/stores/profile';
   import { _ } from 'svelte-i18n';
   import '../app.css';
@@ -8,7 +9,9 @@
   let profile = $derived($profileStore);
 
   $effect(() => {
-    initI18n(profile?.language);
+    if (profile?.language) {
+      setLocale(profile.language);
+    }
   });
 </script>
 

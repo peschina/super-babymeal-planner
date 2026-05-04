@@ -1,11 +1,14 @@
-import { register, init, getLocaleFromNavigator } from 'svelte-i18n';
+import { register, init, locale, getLocaleFromNavigator } from 'svelte-i18n';
 
 register('it', () => fetch('/locales/it.json').then(r => r.json()));
 register('en', () => fetch('/locales/en.json').then(r => r.json()));
 
-export function initI18n(savedLanguage?: string) {
-  init({
-    fallbackLocale: 'it',
-    initialLocale: savedLanguage || getLocaleFromNavigator()?.slice(0, 2) || 'it',
-  });
+// Initialize eagerly so $_ is available during first render
+init({
+  fallbackLocale: 'it',
+  initialLocale: getLocaleFromNavigator()?.slice(0, 2) || 'it',
+});
+
+export function setLocale(language: string) {
+  locale.set(language);
 }
